@@ -16,10 +16,34 @@
  var indexOfArray;
  */
 
-function timeTables(timesTable, startValue, endValue) {
+function timeTables() {
+
+    var timesTable = prompt("What time table do you want to see?");
+    var startValue = prompt("From what number should I start?");
+    var endValue = prompt("Until what number should I stop?");
+
+    if(startValue > endValue) {
+        alert("The starting number has to be less than the ending number!");
+    }
 
     for(; startValue <= endValue; startValue++) {
-        document.write(startValue * timesTable + "<br>");
+
+        if(isNaN(timesTable)) {
+            alert("The time table needs to be a number...")
+            break;
+        }
+
+        if(isNaN(startValue)) {
+            alert("The starting value needs to be a number...")
+            break;
+        }
+
+        if(isNaN(endValue)) {
+            alert("The final value needs to be a number...")
+            break;
+        }
+
+        document.write(timesTable + " * " + startValue + " = " + startValue * timesTable + "<br>");
     }
 
 }
@@ -29,4 +53,4 @@ function timeTables(timesTable, startValue, endValue) {
  }
  */
 
-timeTables(4, 4, 9);
+timeTables();
