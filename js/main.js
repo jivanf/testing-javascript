@@ -18,7 +18,7 @@
 
 function timeTables(timesTable, startValue, endValue) {
 
-    for(startValue <= endValue; startValue++;) {
+    for(; startValue <= endValue; startValue++) {
         document.write(startValue * timesTable + "<br>");
     }
 
