@@ -1,32 +1,46 @@
-//USING SUBSTR METHOD
-var myString = "Hello world how are you?";
-var indexOfMyString = myString.indexOf("how");
-document.write(indexOfMyString + "<br>");
 
-indexOfMyString = myString.lastIndexOf("how");
-document.write(indexOfMyString + "<br>");
+//Checks what method was returned
+function methodChecking() {
+    //Returns a decimal number
+    var numberSelection  = prompt("Write a decimal number");
 
-indexOfMyString = myString.substr(0, 5);
-document.write(indexOfMyString + "<br>");
+    //Returns a method from the Math object
+    var methodSelection = prompt("Choose a method of the Math object");
 
-//USING INDEXOF METHOD
-var longString = "JavaScript is cool. ";
-longString = longString + "I like JavaScript. ";
-longString = longString + "I always use JavaScript";
-var javaScriptCount = 0;
-var foundAtPosition = 0;
+    switch (methodSelection) {
 
-while(foundAtPosition != -1) {
-    foundAtPosition = longString.indexOf("JavaScript", foundAtPosition);
+        case "Math.round":
+            var roundNumber = Math.round(numberSelection);
+            document.write("The number " + numberSelection + " using the Math.round method returns: " +
+                roundNumber + "<br>");
+            break;
 
-    if(foundAtPosition != -1) {
-        foundAtPosition++;
-        javaScriptCount++;
+        case "Math.ceil":
+            var ceilNumber = Math.ceil(numberSelection);
+            document.write("The number " + numberSelection + " using the Math.ceil method returns: " +
+                ceilNumber + "<br>");
+            break;
+
+        case "Math.floor":
+            var floorNumber = Math.ceil(numberSelection);
+            document.write("The number " + numberSelection + " using the Math.floor method returns: " +
+                floorNumber + "<br>");
+            break;
+
+        case "Math.sqrt":
+            var sqrtNumber = Math.sqrt(numberSelection);
+            document.write("The number " + numberSelection + " using the Math.sqrt method returns: " +
+                sqrtNumber + "<br>");
+            break;
+            return;
+
+
     }
+
+
 }
 
+methodChecking();
 
-document.write(longString + "<br>");
-document.write("<H3>Total occurrences of the word JavaScript: </H3>" + javaScriptCount + "<br>");
 
 
