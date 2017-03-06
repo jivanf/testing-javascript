@@ -1,11 +1,11 @@
-function fix(fixNumber, decimalPlaces) {
-    var div = Math.pow(10, decimalPlaces);
-    fixNumber = Math.round(fixNumber * div) / div;
-    return fixNumber.toFixed(3);
+var theHistory = window.history.length;
+document.write("Pages that are in the history stack: " + theHistory);
+document.getElementById("history")
+
+function goToHistoryUsingHref() {
+    window.location.href = "history.html"
 }
 
-var number1 = prompt("Enter the number with decimal places you want to fix");
-var number2 = prompt("How many decimal places do you want?");
-
-document.write(number1 + " fixed to " + number2 + " decimal places is: ");
-document.write(fix(number1, number2));
+function goToHistoryUsingReplace() {
+    window.location.replace("history.html")
+}
