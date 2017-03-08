@@ -1,11 +1,6 @@
-var theHistory = window.history.length;
-document.write("Pages that are in the history stack: " + theHistory);
-document.getElementById("history")
-
-function goToHistoryUsingHref() {
-    window.location.href = "history.html"
+var images = ["img/german.png", "img/mexico.png", "img/usa.png", "img/canada.png"];
+var index = prompt("Enter a number between 0 and 3");
+if(index == "" || index > 3) {
+    alert("You didn't enter a number between 0 and 3.")
 }
-
-function goToHistoryUsingReplace() {
-    window.location.replace("history.html")
-}
+document.images["flag"].src = images[index];
