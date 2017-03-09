@@ -1,6 +1,13 @@
-var images = ["img/german.png", "img/mexico.png", "img/usa.png", "img/canada.png"];
-var index = prompt("Enter a number between 0 and 3");
-if(index == "" || index > 3) {
-    alert("You didn't enter a number between 0 and 3.")
+function changeImage(imgNumber) {
+    var myImages = ["img/german.png", "img/mexico.png", "img/usa.png", "img/canada.png"];
+    var newImage = Math.round(Math.random() * 3);
+    var imgClicked = document.images[imgNumber];
+
+    while(imgClicked.src.indexOf(myImages[newImage]) != -1) {
+        newImage = Math.round(Math.random() * 3);
+    }
+
+    imgClicked.src = myImages[newImage];
 }
-document.images["flag"].src = images[index];
+
+
