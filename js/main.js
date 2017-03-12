@@ -1,15 +1,5 @@
-var myImages = ["img/usa.png", "img/mexico.png", "img/canada.png", "img/german.png"];
-var newImage = Math.round(Math.random() * 3);
-
-function onImage(imgNumber) {
-    var imgClicked = document.images[imgNumber];
-    while(imgClicked.src.indexOf(myImages[newImage]) != -1) {
-        newImage = Math.round(Math.random() * 3);
-    }
-
-    imgClicked.src = myImages[newImage]
-}
-
-function outImage(imgNumber) {
-    document.images[imgNumber].src = myImages[imgNumber];
+function displayHrefs() {
+    var i;
+    for(i = 0; i <= document.links.length; i++) { alert("Link number " + parseInt(i + 1) + " of this website is: "
+    + document.links[i].href)}
 }
