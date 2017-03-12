@@ -60,10 +60,6 @@ a {
     text-decoration: none;
 }
 
-button {
-    margin: 1em;
-
-}
 /*
  * Remove the gap between images, videos, audio and canvas and the bottom of
  * their containers: h5bp.com/i/440
@@ -92,6 +88,15 @@ fieldset {
 
 textarea {
     resize: vertical;
+}
+
+form {
+    margin: 2em;
+}
+
+.block {
+    display: block;
+    margin-bottom: .5em;
 }
 
 /* ==========================================================================
