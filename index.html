@@ -16,44 +16,20 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
-    <body onload="displayHrefs()">
+    <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- Add your site or application content here -->
 
-        <h2>Text Input elements</h2>
+        <p id="number"></p>
+        <button onclick="clickButtonAndDisplayNumber()">Click here to make a number and keep clicking</button>
+        <button onmouseup="mouseUpOnButton()">Click this button to make a text appear</button>
 
-        <form>
-            <input type="text" placeholder="This is a text box">
-            <input type="password" placeholder="This is a password box">
-            <textarea placeholder="This is a textarea"></textarea>
+        <p id="onMouse"></p>
 
-        </form>
 
-        <h2>Button elements</h2>
-
-        <form>
-            <input type="submit">
-            <input type="reset">
-            <button>Button</button>
-        </form>
-
-        <h2>Tick box elements</h2>
-        <p>Checkbox</p>
-        <form>
-            <input class="block" type="checkbox">
-            <input class="block" type="checkbox">
-            <input class="block" type="checkbox">
-        </form>
-
-        <p>Radio</p>
-        <form>
-            <input class="block" type="radio">
-            <input class="block" type="radio">
-            <input class="block" type="radio">
-        </form>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
