@@ -60,6 +60,10 @@ a {
     text-decoration: none;
 }
 
+button {
+    margin-top: 1.5em;
+}
+
 /*
  * Remove the gap between images, videos, audio and canvas and the bottom of
  * their containers: h5bp.com/i/440

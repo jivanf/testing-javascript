@@ -22,13 +22,19 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+        <form name="form1">
 
-        <p id="number"></p>
-        <button onclick="clickButtonAndDisplayNumber()">Click here to make a number and keep clicking</button>
-        <button onmouseup="mouseUpOnButton()">Click this button to make a text appear</button>
+        <p>Enter your name</p>
+        <input type="text" name="name" onblur="nameValidation()">
 
-        <p id="onMouse"></p>
+        <p>Enter your age</p>
+        <input type="text" name="age" onblur="ageValidation()">
 
+        <br>
+
+        <button onclick="buttonValidation()">Continue</button>
+
+        </form>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
