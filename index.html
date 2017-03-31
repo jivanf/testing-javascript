@@ -22,19 +22,44 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
+        <h2>Select your processor speed</h2>
         <form name="form1">
+                <input class="radio" id="speed1" type="radio" value="1.5 GHZ" name="speed">
+                <label>1.5 GHZ</label>
 
-        <p>Enter your name</p>
-        <input type="text" name="name" onblur="nameValidation()">
+                <input class="radio" id="speed2" type="radio" value="2.0 GHZ" name="speed">
+                <label>2.0 GHZ</label>
 
-        <p>Enter your age</p>
-        <input type="text" name="age" onblur="ageValidation()">
+                <input class="radio" id="speed3" type="radio" value="2.5 GHZ" name="speed">
+                <label>2.5 GHZ</label>
+        </form>
 
-        <br>
+        <h2>Select the extra components you want</h2>
 
-        <button onclick="buttonValidation()">Continue</button>
+        <form name="form2">
+        <ul>
+            <li>
+                <input type="checkbox" value="Mouse" name="components">
+                <label>Mouse</label>
+            </li>
+            <li>
+                <input type="checkbox" value="Keyboard" name="components">
+                <label>Keyboard</label>
+            </li>
+            <li>
+                <input type="checkbox" value="Microphone" name="components">
+                <label>Microphone</label>
+            </li>
+        </ul>
+        </form>
+
+        <form name="pricetext">
+
+        <input type="text" id="price" readonly>
 
         </form>
+
+        <button onclick="showOrder()">Submit</button>
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
