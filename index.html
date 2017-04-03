@@ -22,44 +22,24 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <h2>Select your processor speed</h2>
+
         <form name="form1">
-                <input class="radio" id="speed1" type="radio" value="1.5 GHZ" name="speed">
-                <label>1.5 GHZ</label>
 
-                <input class="radio" id="speed2" type="radio" value="2.0 GHZ" name="speed">
-                <label>2.0 GHZ</label>
+        <select size="1" id="list">
 
-                <input class="radio" id="speed3" type="radio" value="2.5 GHZ" name="speed">
-                <label>2.5 GHZ</label>
-        </form>
-
-        <h2>Select the extra components you want</h2>
-
-        <form name="form2">
-        <ul>
-            <li>
-                <input type="checkbox" value="Mouse" name="components">
-                <label>Mouse</label>
-            </li>
-            <li>
-                <input type="checkbox" value="Keyboard" name="components">
-                <label>Keyboard</label>
-            </li>
-            <li>
-                <input type="checkbox" value="Microphone" name="components">
-                <label>Microphone</label>
-            </li>
-        </ul>
-        </form>
-
-        <form name="pricetext">
-
-        <input type="text" id="price" readonly>
+        </select>
 
         </form>
 
-        <button onclick="showOrder()">Submit</button>
+        <div id="div1">
+            <!-- Here goes the button to remove the selected option which is created in main.js --->
+        </div>
+
+        <div id="div2">
+            <!-- Here goes the button to remove all the options in the list which is created in main.js --->
+        </div>
+
+
 
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>

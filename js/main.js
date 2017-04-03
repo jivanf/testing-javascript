@@ -1,85 +1,71 @@
-var finalOutput;
-var subTotalPrice = 0;
-var totalPrice;
 
-function getProcessorSpeed() {
+var numberOfOptions = prompt("How many options do you want to create?");
+var onlyLetters = /^[a-zA-Z\-_ ’'‘]*$/.test(numberOfOptions);
+var list = document.getElementById("list");
 
-    if(document.getElementById('speed1').checked == true) {
-        subTotalPrice += 25;
-        return "Your chosen processor speed is: 1.5 GHZ"
-    }
+function createOptions() {
 
-    else if(document.getElementById('speed2').checked == true) {
-        subTotalPrice += 50;
-        return "Your chosen processor speed is: 2.0 GHZ"
-    }
+    for (var i = 0; i <= numberOfOptions; i++) {
 
-    else if(document.getElementById('speed3').checked == true) {
-        subTotalPrice += 75;
-        return "Your chosen processor speed is: 2.5 GHZ"
-    }
+        if (numberOfOptions > 10000) {
 
-    else {
-        return "You didn't choose a processor speed."
-    }
-
-
-}
-
-function getCheckedBoxes(chkboxName) {
-
-    var checkboxes = document.getElementsByName(chkboxName);
-
-    var checkboxesChecked = [];
-
-    // loop over them all
-    for (var i = 0; i < checkboxes.length; i++) {
-
-        // And stick the checked ones onto an array...
-        if (checkboxes[i].checked) {
-            checkboxesChecked.push(checkboxes[i]);
+            alert("Too many options!");
+            window.location.reload();
+            break;
         }
+
+        if (numberOfOptions == 0) {
+            alert("You can't create zero options");
+            window.location.reload();
+            break;
+        }
+
+
+        if (i == 0) {
+            i = 1;
+        }
+
+        var option = document.createElement("option");
+        option.text = "Option #" + i;
+        list.add(option);
+
     }
 
-    //Convert the NodeList into an array
-    var arr = Array.prototype.slice.call(checkboxesChecked, 0);
-    // Return the array if it is non-empty, or null
-    return arr;
+    if (onlyLetters == true) {
+        alert("You can't put letters here");
+        window.location.reload();
+    }
+
 }
 
-// Call as
+function createRemoveSelectedButton() {
+    var div1 = document.getElementById("div1");
+    var button = '<button id="remove_selected_but" onclick="removeSelectedOption();">Remove selected options</button>'
+    div1.innerHTML = button;
+    
+}
 
-
-function showOrder() {
-
-    var checkedBoxes = getCheckedBoxes("components");
-    var comp = [];
-
-    checkedBoxes.forEach(function(item){
-        comp.push(item.value);
-    });
-
-    if(comp.length == 1) {
-        subTotalPrice += 10
-    }
-
-    if(comp.length == 2) {
-        subTotalPrice += 20
-    }
-
-    if(comp.length == 3) {
-        subTotalPrice += 30
-    }
-
-
-    totalPrice = subTotalPrice;
-    finalOutput = getProcessorSpeed() + "\n";
-    finalOutput = finalOutput + "The additional components you want added to your computer are: " + "\n";
-    finalOutput = finalOutput + comp.join("\n");
-    document.getElementById("price").value = "Total: " +  "$" + subTotalPrice;
-    subTotalPrice = 0;
-    document.form1.reset();
-    document.form2.reset();
+function removeSelectedOption() {
+    list.remove(list.selectedIndex);
 
 }
+
+function createRemoveButton() {
+
+    var div2 = document.getElementById("div2");
+    var button = '<button id="remove_but" onclick="removeOptions(list);">Remove options</button>'
+    div2.innerHTML = button;
+
+}
+
+function removeOptions(selectbox) {
+    var i;
+    for (i = selectbox.options.length - 1; i >= 0; i--) {
+        selectbox.remove(i);
+    }
+}
+
+createRemoveButton();
+createRemoveSelectedButton();
+createOptions();
 
