@@ -117,21 +117,30 @@ form {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-ul {
-    list-style: none;
+
+/*Please run in Firefox for better transitions.
+*/
+body input {
+    font-size: 12px;
+
+    -webkit-transition: color 2s, font-size 1s;
+    -moz-transition: color 2s, font-size 1s;
+    -o-transition: color 2s, font-size 1s;
+    transition: color 2s, font-size 1s;
 }
 
-h2 {
-    margin-left: 2em;
+input:hover {
+    font-size: 24px;
 }
 
-.radio {
-    margin-left: 4.5em;
+.center {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
 }
 
-#but {
-    margin-left: 2em;
-}
+
 
 
 
