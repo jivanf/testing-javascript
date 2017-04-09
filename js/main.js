@@ -1,15 +1,30 @@
+var txt = "A,B,C,D";
+var but = document.getElementById("but");
+var toggle = 0;
+var newTxt = txt.split(",");
+var p = document.getElementById("txt");
 
-function fahrenheitToCentigrade() {
-var fahrenheit = document.getElementById("fahrenheit1").value;
-var centigrade;
-
-centigrade = 5/9 * (fahrenheit - 32);
-
-var fixedCentigrade = centigrade.toFixed(2);
-
-document.getElementById("centigrade1").value = fixedCentigrade;
-
+function reverseText() {
+    newTxt.reverse();
+    toggle = 1;
+    p.innerHTML = newTxt;
 }
 
-document.getElementById("fahrenheit_to_centigrade").addEventListener("click", fahrenheitToCentigrade);
+if(toggle == 1) {
+
+    function originalText() {
+        newTxt.reverse();
+        p.innerHTML = newTxt
+    }
+}
+
+function callBothFunctions() {
+    reverseText();
+    originalText();
+}
+
+but.addEventListener("click", reverseText, originalText());
+
+
+
 
