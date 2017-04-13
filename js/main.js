@@ -1,7 +1,4 @@
-function replaceQuotes(textArea) {
-    var textAreaValue = textArea.value;
-    var regExp = /\B'|'\B/gi;
-    var replaceValue = textAreaValue.replace(regExp, '"');
-    alert(replaceValue);
-    textAreaValue.value = replaceValue;
-}
+var str = "a dog walked in off a street and ordered the finest beer";
+var regExp = /\ba\b/g;
+var res = str.replace(regExp, "the");
+alert(res);
