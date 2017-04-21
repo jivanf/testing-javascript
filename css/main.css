@@ -53,7 +53,13 @@ hr {
 }
 
 p {
-    margin: 1em;
+    width: 350px;
+    margin-left: 1.5em;
+}
+
+input[type="checkbox"] {
+    float: left;
+    margin-top: 5px;
 }
 
 a {
@@ -118,23 +124,13 @@ form {
    Author's custom styles
    ========================================================================== */
 
-/*Please run in Firefox for better transitions.
-*/
+body {
+    margin: 2em;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+div {
+    position: relative;
+}
 
 
 /* ==========================================================================
