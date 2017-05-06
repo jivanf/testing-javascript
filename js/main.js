@@ -1,5 +1,7 @@
-var timesVisited = parseInt(getCookieValue("timesVisited"));
+window.onload = function () {
+    document.images[0].src = flags[parseInt(getCookieValue("flagNumber"))];
 
+}
 
 function setCookie(cookieName, cookieValue) {
     document.cookie = cookieName + "=" + cookieValue + "; expires=Thu, 18 Dec 2017 12:00:00 UTC";
@@ -42,32 +44,33 @@ function getCookieName(name) {
     return decodeURI(dc.substring(begin + prefix.length, end));
 }
 
+var flags = ["img/german.png", "img/mexico.png", "img/usa.png", "img/canada.png"];
+var flagsNumber = parseInt(getCookieValue("flagNumber"));
 
-if(getCookieName("username") != null) {
-    document.getElementById("submit").remove();
-    document.getElementById("textbox").remove();
+
+
+if (!flagsNumber) {
+    flagsNumber = 1;
+}
+
+else if (flagsNumber > 2) {
+    flagsNumber = 0;
 }
 
 else {
-
-    document.getElementById("submit").addEventListener("click", function () {
-    setCookie("username", document.getElementById("textbox").value);
-    alert("Welcome " + "to my website" + ", " + getCookieValue("username"))
-    document.getElementById("submit").remove();
-    document.getElementById("textbox").remove();
-})
-
+    flagsNumber += 1;
 }
 
-if (!timesVisited) {
 
-    timesVisited = 1;
 
-}
-else {
 
-    timesVisited = timesVisited += 1;
-    alert("Welcome back " + getCookieValue("username") + "!" + "  You have visited my website " +  timesVisited + " times");
-}
 
-setCookie("timesVisited", timesVisited);
+setCookie("flagNumber", flagsNumber);
+
+console.log(flags.length);
+console.log(document.images[0].src);
+
+
+
+
+
