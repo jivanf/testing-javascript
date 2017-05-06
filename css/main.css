@@ -10,12 +10,9 @@
    Base styles: opinionated defaults
    ========================================================================== */
 
-html,
-button,
-input,
-select,
-textarea {
+input {
     color: #222;
+    margin-left: -30px;
 }
 
 html {
@@ -69,6 +66,8 @@ a {
 button {
     margin-top: 1.5em;
 }
+
+
 
 /*
  * Remove the gap between images, videos, audio and canvas and the bottom of
