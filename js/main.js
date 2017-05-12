@@ -1,76 +1,38 @@
+var paraOneLeft = 0;
+var paraTwoLeft = 0;
+var switchDirection = false;
+
+
 window.onload = function () {
-    document.images[0].src = flags[parseInt(getCookieValue("flagNumber"))];
 
+    setInterval(moveParas, 0);
 }
 
-function setCookie(cookieName, cookieValue) {
-    document.cookie = cookieName + "=" + cookieValue + "; expires=Thu, 18 Dec 2017 12:00:00 UTC";
-}
 
-function getCookieValue(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
+function moveParas() {
+
+
+    if (switchDirection == false) {
+        paraOneLeft++;
+        paraTwoLeft++;
+
+        if (paraOneLeft == screen.width) {
+            switchDirection = true;
+            document.getElementById("para1").style.left = 400;
         }
     }
-    return "";
-}
 
-function getCookieName(name) {
-    var dc = document.cookie;
-    var prefix = name + "=";
-    var begin = dc.indexOf("; " + prefix);
-    if (begin == -1) {
-        begin = dc.indexOf(prefix);
-        if (begin != 0) {
-            return null;
+    else {
+        paraOneLeft--;
+        paraTwoLeft--;
+
+        if (paraOneLeft == -150) {
+            switchDirection = false;
+
         }
     }
-    else
-    {
-        begin += 2;
-        var end = document.cookie.indexOf(";", begin);
-        if (end == -1) {
-            end = dc.length;
-        }
-    }
-    return decodeURI(dc.substring(begin + prefix.length, end));
+
+    document.getElementById("para1").style.left = paraOneLeft;
+    document.getElementById("para2").style.left = paraTwoLeft;
+
 }
-
-var flags = ["img/german.png", "img/mexico.png", "img/usa.png", "img/canada.png"];
-var flagsNumber = parseInt(getCookieValue("flagNumber"));
-
-
-
-if (!flagsNumber) {
-    flagsNumber = 1;
-}
-
-else if (flagsNumber > 2) {
-    flagsNumber = 0;
-}
-
-else {
-    flagsNumber += 1;
-}
-
-
-
-
-
-setCookie("flagNumber", flagsNumber);
-
-console.log(flags.length);
-console.log(document.images[0].src);
-
-
-
-
-
