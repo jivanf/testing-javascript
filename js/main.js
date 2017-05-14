@@ -1,38 +1,54 @@
-var paraOneLeft = 0;
-var paraTwoLeft = 0;
-var switchDirection = false;
 
 
 window.onload = function () {
+    var imgUSA = document.getElementById("imgUSA");
+    var imgCanada = document.getElementById("imgCanada");
+    var imgGermany = document.getElementById("imgGermany");
 
-    setInterval(moveParas, 0);
+    imgGermany.onmouseover = function() {showText(this.id)};
+    imgUSA.onmouseover = function() {showText(this.id)};
+    imgCanada.onmouseover = function() {showText(this.id)};
+
+    imgGermany.onmouseout = function() {hideText(this.id)};
+    imgUSA.onmouseout = function() {hideText(this.id)};
+    imgCanada.onmouseout = function() {hideText(this.id)};
+
+
 }
 
+function showText(id) {
+    if (id == "imgGermany") {
+        document.getElementById("textGermany").innerText = "Learn more about Germany";
+    }
 
-function moveParas() {
-
-
-    if (switchDirection == false) {
-        paraOneLeft++;
-        paraTwoLeft++;
-
-        if (paraOneLeft == screen.width) {
-            switchDirection = true;
-            document.getElementById("para1").style.left = 400;
-        }
+    else if (id == "imgCanada" ) {
+        document.getElementById("textCanada").innerText = "Learn more about Canada";
     }
 
     else {
-        paraOneLeft--;
-        paraTwoLeft--;
+        document.getElementById("textUSA").innerText = "Learn more about the USA";
+    }
+}
 
-        if (paraOneLeft == -150) {
-            switchDirection = false;
-
-        }
+function hideText(id) {
+    if (id == "imgGermany" ) {
+        document.getElementById("textGermany").innerText = "";
     }
 
-    document.getElementById("para1").style.left = paraOneLeft;
-    document.getElementById("para2").style.left = paraTwoLeft;
+    else if (id == "imgCanada") {
+        document.getElementById("textCanada").innerText = "";
+    }
 
+    else {
+        document.getElementById("textUSA").innerText = "";
+    }
 }
+
+
+
+
+
+
+
+
+

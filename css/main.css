@@ -131,6 +131,35 @@ div {
     position: relative;
 }
 
+#textGermany {
+    position: absolute;
+    left: 350px;
+    font-size: 1.5em;
+}
+
+#textCanada {
+    position: absolute;
+    left: 750px;
+    font-size: 1.5em;
+}
+
+#textUSA {
+    position: absolute;
+    right: 350px;
+    font-size: 1.5em;
+}
+
+
+.img-with-text {
+    text-align: justify;
+    width: 400px;
+}
+
+.img-with-text img {
+    display: block;
+    margin: 0 auto;
+}
+
 
 /* ==========================================================================
    Helper classes
