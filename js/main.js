@@ -1,26 +1,20 @@
-var body = document.getElementById("body");
-
-var header = document.createElement("H1");
-var headerText = document.createTextNode("This is an H1");
-var paragraph = document.createElement("P");
-var paragraphText = document.createTextNode("This is a paragraph");
-
-paragraph.appendChild(paragraphText);
-header.appendChild(headerText);
-
-header.setAttribute("align", "center");
-paragraph.setAttribute("id", "para");
-
-alert("The ID of the paragraph is: " + paragraph.id);
-alert("The attribute of the H1 is: " + header.getAttribute("align"));
-
-body.appendChild(header);
-body.appendChild(paragraph);
+document.documentElement.onclick = function () {
+    alert("X coords using screenX: " + event.screenX + " " + "Y coords using screenY: " + event.screenY);
+    alert("X coords using clientX: " + event.clientX + " " + "Y coords using clientY: " + event.clientY);
+};
 
 
+document.getElementById("para").onmousedown = function () {
+    if (event.button == 0) {
+        alert("You clicked with the left click");
+    }
 
+    else if (event.button == 1) {
+        alert("You clicked with the middle click");
+    }
 
-
-
-
+    else {
+        alert("You clicked with the right click");
+    }
+};
 
