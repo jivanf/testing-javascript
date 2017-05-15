@@ -1,6 +1,4 @@
-var html = document.documentElement;
-var head = html.firstElementChild;
-var body = head.nextElementSibling;
+var body = document.getElementById("body");
 
 var header = document.createElement("H1");
 var headerText = document.createTextNode("This is an H1");
@@ -10,15 +8,16 @@ var paragraphText = document.createTextNode("This is a paragraph");
 paragraph.appendChild(paragraphText);
 header.appendChild(headerText);
 
+header.setAttribute("align", "center");
+paragraph.setAttribute("id", "para");
+
+alert("The ID of the paragraph is: " + paragraph.id);
+alert("The attribute of the H1 is: " + header.getAttribute("align"));
+
 body.appendChild(header);
 body.appendChild(paragraph);
 
-alert("The DOM Structure is: ")
-alert(html.tagName);
-alert(head.tagName);
-alert(body.tagName);
-alert(header.tagName);
-alert(paragraph.tagName);
+
 
 
 
